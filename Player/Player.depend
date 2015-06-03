@@ -1,0 +1,93 @@
+# depslib dependency file v1.0
+1430711217 source:c:\dropbox\報告\啟發式演算法\player\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	"myPipe.hpp"
+
+1430464022 c:\dropbox\報告\啟發式演算法\player\mypipe.hpp
+
+1430464174 source:c:\dropbox\報告\啟發式演算法\player\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433336982 source:c:\dropbox\報告\啟發式演算法\final\player\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433221270 source:c:\dropbox\報告\啟發式演算法\final\player\board.cpp
+	"board.h"
+
+1433221260 c:\dropbox\報告\啟發式演算法\final\player\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433336512 source:c:\dropbox\報告\啟發式演算法\final\player\main.cpp
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<string>
+	<iostream>
+	"myPipe.hpp"
+	"board.h"
+
+1430464022 c:\dropbox\報告\啟發式演算法\final\player\mypipe.hpp
+
+1433221270 source:c:\dropbox\報告\啟發式演算法\final_o\player\board.cpp
+	"board.h"
+
+1433221260 c:\dropbox\報告\啟發式演算法\final_o\player\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433330903 source:c:\dropbox\報告\啟發式演算法\final_o\player\main.cpp
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<string>
+	<iostream>
+	"myPipe.hpp"
+	"board.h"
+
+1430464022 c:\dropbox\報告\啟發式演算法\final_o\player\mypipe.hpp
+
+1433328929 source:c:\dropbox\報告\啟發式演算法\final_o\player\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433221270 source:d:\dropbox\報告\啟發式演算法\final\player\board.cpp
+	"board.h"
+
+1433221260 d:\dropbox\報告\啟發式演算法\final\player\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433347728 source:d:\dropbox\報告\啟發式演算法\final\player\main.cpp
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<string>
+	<iostream>
+	"myPipe.hpp"
+	"board.h"
+
+1433347818 d:\dropbox\報告\啟發式演算法\final\player\mypipe.hpp
+
+1433347817 source:d:\dropbox\報告\啟發式演算法\final\player\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+

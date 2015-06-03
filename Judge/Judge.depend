@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1433221270 source:c:\dropbox\報告\啟發式演算法\final\judge\board.cpp
+	"board.h"
+
+1433221260 c:\dropbox\報告\啟發式演算法\final\judge\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433333295 source:c:\dropbox\報告\啟發式演算法\final\judge\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433329621 source:c:\dropbox\報告\啟發式演算法\final\judge\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+	"myPipe.hpp"
+	"board.h"
+
+1430464022 c:\dropbox\報告\啟發式演算法\final\judge\mypipe.hpp
+
+1433221270 source:c:\dropbox\報告\啟發式演算法\final_o\judge\board.cpp
+	"board.h"
+
+1433221260 c:\dropbox\報告\啟發式演算法\final_o\judge\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433329621 source:c:\dropbox\報告\啟發式演算法\final_o\judge\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+	"myPipe.hpp"
+	"board.h"
+
+1430464022 c:\dropbox\報告\啟發式演算法\final_o\judge\mypipe.hpp
+
+1433328884 source:c:\dropbox\報告\啟發式演算法\final_o\judge\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433221270 source:d:\dropbox\報告\啟發式演算法\final\judge\board.cpp
+	"board.h"
+
+1433221260 d:\dropbox\報告\啟發式演算法\final\judge\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433347676 source:d:\dropbox\報告\啟發式演算法\final\judge\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+	"myPipe.hpp"
+	"board.h"
+
+1433347818 d:\dropbox\報告\啟發式演算法\final\judge\mypipe.hpp
+
+1433348218 source:d:\dropbox\報告\啟發式演算法\final\judge\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
