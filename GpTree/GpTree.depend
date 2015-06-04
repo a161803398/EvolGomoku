@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1433419307 source:c:\users\yusing\desktop\gptree\gptree.cpp
+	"GpTree.h"
+
+1433419802 c:\users\yusing\desktop\gptree\gptree.h
+	<iostream>
+	<fstream>
+
+1433419573 source:c:\users\yusing\desktop\gptree\main.cpp
+	"GpTree.h"
+
