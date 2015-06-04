@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1433221270 source:c:\dropbox\報告\啟發式演算法\final\scrap\startgui\board.cpp
+	"board.h"
+
+1433221260 c:\dropbox\報告\啟發式演算法\final\scrap\startgui\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433409246 source:c:\dropbox\報告\啟發式演算法\final\scrap\startgui\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+	"myPipe.hpp"
+	"board.h"
+
+1433347818 c:\dropbox\報告\啟發式演算法\final\scrap\startgui\mypipe.hpp
+
+1433348218 source:c:\dropbox\報告\啟發式演算法\final\scrap\startgui\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+

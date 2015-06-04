@@ -1,0 +1,755 @@
+# depslib dependency file v1.0
+1433397775 source:c:\users\yusing\desktop\gomoku gui\main.cpp
+	<windows.h>
+	<stdio.h>
+	<string>
+	<iostream>
+	"game.h"
+	"myPipe.hpp"
+
+1433396147 c:\users\yusing\desktop\gomoku gui\game.h
+	<set>
+	<map>
+	<vector>
+	<windows.h>
+	<string.h>
+	<math.h>
+	<algorithm>
+	"Stone.h"
+	<time.h>
+
+1403108880 c:\users\yusing\desktop\gomoku gui\stone.h
+	"mouseEvents.h"
+	"display.h"
+
+1402712503 c:\users\yusing\desktop\gomoku gui\mouseevents.h
+	"SDL/SDL.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	"SDL_config_dreamcast.h"
+	"SDL_config_macos.h"
+	"SDL_config_macosx.h"
+	"SDL_config_symbian.h"
+	"SDL_config_win32.h"
+	"SDL_config_os2.h"
+	"SDL_config_minimal.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_platform.h
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_config_win32.h
+	"SDL_platform.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\begin_code.h
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\close_code.h
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_keysym.h
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401282600 c:\users\yusing\desktop\gomoku gui\display.h
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	"SDL/SDL_ttf.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\users\yusing\desktop\gomoku gui\sdl-1.2.15\include\sdl\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1416559919 c:\users\yusing\desktop\gomoku gui\button.h
+	"mouseEvents.h"
+	"display.h"
+
+1416559915 source:c:\users\yusing\desktop\gomoku gui\button.cpp
+	"Button.h"
+
+1401282534 source:c:\users\yusing\desktop\gomoku gui\display.cpp
+	"display.h"
+
+1433396343 source:c:\users\yusing\desktop\gomoku gui\game.cpp
+	"game.h"
+
+1402713565 source:c:\users\yusing\desktop\gomoku gui\mouseevents.cpp
+	"mouseEvents.h"
+
+1416559324 source:c:\users\yusing\desktop\gomoku gui\stone.cpp
+	"Stone.h"
+
+1416559915 source:d:\dropbox\gomoku gui\button.cpp
+	"Button.h"
+
+1416559919 d:\dropbox\gomoku gui\button.h
+	"mouseEvents.h"
+	"display.h"
+
+1402712503 d:\dropbox\gomoku gui\mouseevents.h
+	"SDL/SDL.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	"SDL_config_dreamcast.h"
+	"SDL_config_macos.h"
+	"SDL_config_macosx.h"
+	"SDL_config_symbian.h"
+	"SDL_config_win32.h"
+	"SDL_config_os2.h"
+	"SDL_config_minimal.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_platform.h
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_config_win32.h
+	"SDL_platform.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\begin_code.h
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\close_code.h
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_keysym.h
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401282600 d:\dropbox\gomoku gui\display.h
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	"SDL/SDL_ttf.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 d:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401282534 source:d:\dropbox\gomoku gui\display.cpp
+	"display.h"
+
+1430553281 source:d:\dropbox\gomoku gui\game.cpp
+	"game.h"
+
+1430552760 d:\dropbox\gomoku gui\game.h
+	<set>
+	<map>
+	<vector>
+	<windows.h>
+	<string.h>
+	<math.h>
+	<algorithm>
+	"Stone.h"
+	<time.h>
+
+1403108880 d:\dropbox\gomoku gui\stone.h
+	"mouseEvents.h"
+	"display.h"
+
+1402713565 source:d:\dropbox\gomoku gui\mouseevents.cpp
+	"mouseEvents.h"
+
+1416559324 source:d:\dropbox\gomoku gui\stone.cpp
+	"Stone.h"
+
+1430553192 source:d:\dropbox\gomoku gui\main.cpp
+	<windows.h>
+	<stdio.h>
+	"game.h"
+
+1416559915 source:c:\dropbox\gomoku gui\button.cpp
+	"Button.h"
+
+1416559919 c:\dropbox\gomoku gui\button.h
+	"mouseEvents.h"
+	"display.h"
+
+1402712503 c:\dropbox\gomoku gui\mouseevents.h
+	"SDL/SDL.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	"SDL_config_dreamcast.h"
+	"SDL_config_macos.h"
+	"SDL_config_macosx.h"
+	"SDL_config_symbian.h"
+	"SDL_config_win32.h"
+	"SDL_config_os2.h"
+	"SDL_config_minimal.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_platform.h
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_config_win32.h
+	"SDL_platform.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\begin_code.h
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\close_code.h
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_keysym.h
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401282600 c:\dropbox\gomoku gui\display.h
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	"SDL/SDL_ttf.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401186610 c:\dropbox\gomoku gui\sdl-1.2.15\include\sdl\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1401282534 source:c:\dropbox\gomoku gui\display.cpp
+	"display.h"
+
+1430553281 source:c:\dropbox\gomoku gui\game.cpp
+	"game.h"
+
+1430552760 c:\dropbox\gomoku gui\game.h
+	<set>
+	<map>
+	<vector>
+	<windows.h>
+	<string.h>
+	<math.h>
+	<algorithm>
+	"Stone.h"
+	<time.h>
+
+1403108880 c:\dropbox\gomoku gui\stone.h
+	"mouseEvents.h"
+	"display.h"
+
+1430553192 source:c:\dropbox\gomoku gui\main.cpp
+	<windows.h>
+	<stdio.h>
+	"game.h"
+
+1402713565 source:c:\dropbox\gomoku gui\mouseevents.cpp
+	"mouseEvents.h"
+
+1416559324 source:c:\dropbox\gomoku gui\stone.cpp
+	"Stone.h"
+
+1433348218 source:c:\users\yusing\desktop\gomoku gui\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433347818 c:\users\yusing\desktop\gomoku gui\mypipe.hpp
+
