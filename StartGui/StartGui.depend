@@ -25,3 +25,29 @@
 	<windows.h>
 	<string.h>
 
+1433221270 source:c:\evolgomoku\startgui\board.cpp
+	"board.h"
+
+1433221260 c:\evolgomoku\startgui\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433409246 source:c:\evolgomoku\startgui\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+	"myPipe.hpp"
+	"board.h"
+
+1433347818 c:\evolgomoku\startgui\mypipe.hpp
+
+1433348218 source:c:\evolgomoku\startgui\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+

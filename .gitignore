@@ -29,3 +29,5 @@
 
 # But include test
 !test/*.exe
+!test/GuiTest/*.exe
+test/GuiTest/stdout.txt
