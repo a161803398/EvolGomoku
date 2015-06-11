@@ -31,3 +31,4 @@
 !test/*.exe
 !test/GuiTest/*.exe
 test/GuiTest/stdout.txt
+GpTree/gene.txt
