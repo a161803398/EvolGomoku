@@ -9,3 +9,17 @@
 1433419573 source:c:\users\yusing\desktop\gptree\main.cpp
 	"GpTree.h"
 
+1434022449 source:c:\evolgomoku\gptree\main.cpp
+	"GpTree.h"
+	<stdlib.h>
+	<time.h>
+
+1434022551 c:\evolgomoku\gptree\gptree.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1434022740 source:c:\evolgomoku\gptree\gptree.cpp
+	"GpTree.h"
+

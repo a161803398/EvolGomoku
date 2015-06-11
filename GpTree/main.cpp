@@ -1,7 +1,18 @@
 
 #include "GpTree.h"
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
 int main() {
+    srand(time(0));
+
+    for(int i =0; i<10; i++) {
+        GeneTree *exTree;
+        randTree2C(exTree, 5);
+        printTree(exTree);
+        cout <<endl;
+    }
+
     ofstream fout("gene.txt");
     if(!fout) {
         cout << "Can not create file!!\n";
@@ -9,12 +20,14 @@ int main() {
     }
 
     GeneTree *exTree;
-    exTree = new GeneTree('+');
-    exTree->left = new GeneTree('*');
-    exTree->left -> left = new GeneTree(83);
-    exTree->left -> right = new GeneTree(12);
-    exTree->right = new GeneTree(16);
+    randTree2C(exTree, 10);
 
+    /*  exTree = new GeneTree('+');
+        exTree->left = new GeneTree('*');
+        exTree->left -> left = new GeneTree(83);
+        exTree->left -> right = new GeneTree(12);
+        exTree->right = new GeneTree(16);
+    */
     exportTree(exTree, fout);
     fout.close();
 
