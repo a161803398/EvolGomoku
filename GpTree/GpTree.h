@@ -47,9 +47,19 @@ public:
         this->data = 0;
     }
 };
+char getRandOpt();
+
+void delTree(GeneTree *&p);
+void cpTree(GeneTree *&tar, GeneTree *src);
+void mutateTree(GeneTree *&p);
 void exportTree(GeneTree *p, std::ostream &out);
 void importTree(GeneTree *&p, std::ifstream &fin);
 void printTree(GeneTree *p);
-void randTree(GeneTree *&p, int maxDeep, bool forceFull = false);
-void randTree2C(GeneTree *&p, int maxDeep, bool forceFull = false);
+void randTerm(GeneTree *&p, int maxDeep, bool forceFull = false);
+void randBranch(GeneTree *&p, int maxDeep, bool forceFull = false);
+void crossOver(GeneTree *&parent1, GeneTree *&parent2);
+int getNodeCount(GeneTree *p);
+
+GeneTree*& getRandNode(GeneTree *&p, int nodeCount);
+GeneTree*& getRandNode(GeneTree *&p);
 #endif // GPTREE_H_INCLUDED

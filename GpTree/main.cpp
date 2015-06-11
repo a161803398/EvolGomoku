@@ -6,12 +6,36 @@ using namespace std;
 int main() {
     srand(time(0));
 
-    for(int i =0; i<10; i++) {
-        GeneTree *exTree;
-        randTree2C(exTree, 5);
-        printTree(exTree);
-        cout <<endl;
-    }
+    //for(int i =0; i<10; i++) {
+    GeneTree *parent1, *parent2;
+    randBranch(parent1, 2);
+    randBranch(parent2, 2);
+
+    printTree(parent1);
+    cout <<endl;
+/*
+    printTree(parent2);
+    cout <<endl;
+*/
+    mutateTree(parent1);
+
+    printTree(parent1);
+    cout <<endl;
+/*
+    GeneTree *child1, *child2;
+    cpTree(child1, parent1);
+    cpTree(child2, parent2);
+
+    crossOver(child1, child2);
+
+    printTree(child1);
+    cout <<endl;
+
+    printTree(child2);
+    cout <<endl;
+*/
+
+    //}
 
     ofstream fout("gene.txt");
     if(!fout) {
@@ -20,7 +44,7 @@ int main() {
     }
 
     GeneTree *exTree;
-    randTree2C(exTree, 10);
+    randBranch(exTree, 1);
 
     /*  exTree = new GeneTree('+');
         exTree->left = new GeneTree('*');
@@ -35,7 +59,7 @@ int main() {
 
     ifstream fin("gene.txt");
     importTree(readTree, fin);
-    printTree(readTree);
+    //printTree(readTree);
     //exportTree(readTree, cout);
 
     /*

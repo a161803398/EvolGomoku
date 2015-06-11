@@ -1,6 +1,26 @@
 #include "GpTree.h"
 using std::cout;
 using std::string;
+
+void cpTree(GeneTree *&tar, GeneTree *src) {
+    if(!src) {//if not node
+        tar = 0;
+        return;
+    }
+
+    tar = new GeneTree(src->opt, src->data);
+    cpTree(tar->left, src->left);
+    cpTree(tar->right, src->right);
+}
+
+void delTree(GeneTree *&p) {
+    if(!p) return; //if not node
+    delTree(p->left);
+    delTree(p->right);
+    delete(p);
+    p = 0;
+}
+
 void exportTree(GeneTree *p, std::ostream &out) {
     if (!p) {
         out << "# ";
@@ -25,9 +45,9 @@ void importTree(GeneTree *&p, std::ifstream &fin) {
     }
 }
 
-void randTree(GeneTree *&p, int maxDeep, bool forceFull) {
+void randTerm(GeneTree *&p, int maxDeep, bool forceFull) {
     if(maxDeep > 0 && (forceFull || (rand() % 2))) { //if not force full, 50% branch
-        randTree2C(p, maxDeep, forceFull);
+        randBranch(p, maxDeep, forceFull);
     } else {
         char opt = TermSet[rand() % TermLength]; //rand select some value from TermSet
         if(opt == 'n') { //normal number
@@ -38,17 +58,73 @@ void randTree(GeneTree *&p, int maxDeep, bool forceFull) {
     }
 }
 
-void randTree2C(GeneTree *&p, int maxDeep, bool forceFull) {
-    char opt;
-    if(rand() % 10 < 8){ //80% Arithmetic opt
-        opt = FunSet[rand() % FunLength]; //rand select some function from FunSet
-    }else{ //20% logic opt
-        opt = LogicSet[rand() % LogicLength];
+char getRandOpt() {
+    //80% Arithmetic opt
+    if(rand() % 10 < 8) return FunSet[rand() % FunLength]; //rand select some function from FunSet
+    //20% logic opt
+    return LogicSet[rand() % LogicLength];
+}
+
+void randBranch(GeneTree *&p, int maxDeep, bool forceFull) {
+    p = new GeneTree(getRandOpt());
+    randTerm(p->left, maxDeep - 1, forceFull);
+    randTerm(p->right, maxDeep - 1, forceFull);
+}
+
+int getNodeCount(GeneTree *p) {
+    int nodeCount = 1;
+    if(p->left) nodeCount += getNodeCount(p->left);
+    if(p->right) nodeCount += getNodeCount(p->right);
+    return nodeCount;
+}
+
+
+GeneTree** getRandNode(GeneTree **p, int &nodeCount) {
+    // (1/placeCount) possibility to select this node
+    if(rand() % nodeCount == 0) return p;
+    nodeCount --; //this node already drawn
+
+    GeneTree *&thisNode = *p;
+    GeneTree **tmp = 0;
+
+    if(thisNode->left) {
+        tmp = getRandNode(&(thisNode->left), nodeCount);
+        if(tmp) return tmp;
     }
 
-    p = new GeneTree(opt);
-    randTree(p->left, maxDeep - 1, forceFull);
-    randTree(p->right, maxDeep - 1, forceFull);
+    if(thisNode->right) {
+        tmp = getRandNode(&(thisNode->right), nodeCount);
+        if(tmp) return tmp;
+    }
+
+    return 0;//all fail
+}
+
+GeneTree*& getRandNode(GeneTree *&p, int nodeCount) {
+    return *getRandNode(&p, nodeCount);
+}
+
+GeneTree*& getRandNode(GeneTree *&p) {
+    return getRandNode(p, getNodeCount(p));
+}
+
+void crossOver(GeneTree *&parent1, GeneTree *&parent2) {
+    GeneTree *&subTree1 = getRandNode(parent1);
+    GeneTree *&subTree2 = getRandNode(parent2);
+    GeneTree *tmp = subTree1;
+    subTree1 = subTree2;
+    subTree2 = tmp;
+}
+
+void mutateTree(GeneTree *&p) {
+    GeneTree *&subTree = getRandNode(p); //random select one node
+
+    if(subTree->left == 0) { //if it is term node (because both left and right of term node is 0)
+        delete(subTree); //delete this node
+        randTerm(subTree, 1); //add new sub tree(may be deep 0 or 1)
+    } else { //is inter node
+        subTree->opt = getRandOpt(); //change opt
+    }
 }
 
 void printTree(GeneTree *p) {
@@ -102,53 +178,39 @@ void printTree(GeneTree *p) {
     }
 }
 
-void evalTree(GeneTree *p) {
-    if (p) {
-        //output current node
-        bool isOpt = true;
-        string printOpt;
+int evalTree(GeneTree *p) {
+    if(!p) return 0;
 
-        switch(p->opt) {
-        case '+':
-        case '-':
-        case '*':
-        case '/':
-        case '%':
-            printOpt = (p->opt);
-            break;
-        case AZ:
-            printOpt = "AZ";
-            break;
-        case AEZ:
-            printOpt = "AEZ";
-            break;
-        case EZ:
-            printOpt = "EZ";
-            break;
-        case NZ:
-            printOpt = "NZ";
-            break;
-        case EL:
-            printOpt = "EL";
-            break;
+    int opd1 = evalTree(p->left);
+    int opd2 = evalTree(p->right);
 
-        case 'n':
-            isOpt = false;
-            cout << (p->data);
-            break;
-        default:
-            isOpt = false;
-            cout << (p->opt);
-            cout << (p->data);
-        }
-        if(isOpt) {
-            cout << "(";
-            printTree(p->left);
-            cout << " ";
-            cout << printOpt;
-            cout << " ";
-            printTree(p->right);
-            cout << ")";
-        }
+    switch(p->opt) {
+    case '+':
+        return opd1 + opd2;
+    case '-':
+        return opd1 - opd2;
+    case '*':
+        return opd1 * opd2;
+    case '/':
+        return opd1 / opd2;
+    case '%':
+        return opd1 % opd2;
+    case AZ:
+        return opd1 > 0 ? opd2 : 0;
+    case AEZ:
+        return opd1 >= 0 ? opd2 : 0;
+    case EZ:
+        return opd1 == 0 ? opd2 : 0;
+    case NZ:
+        return opd1 != 0 ? opd2 : 0;
+    case EL:
+        return opd1 != 0 ? opd1 : opd2;
+    case 'n':
+        return p->data;
+    default: //find in table
+        cout << (p->opt);
+        cout << (p->data);
     }
+
+
 }

@@ -91,25 +91,3 @@
 	<windows.h>
 	<string.h>
 
-1434039841 source:d:\evolgomoku\player\main.cpp
-	<iostream>
-	<fstream>
-	<limits.h>
-	<vector>
-	<algorithm>
-	<stdlib.h>
-	<utility>
-	<time.h>
-	<stdio.h>
-	<time.h>
-	<windows.h>
-	<string>
-	"myPipe.hpp"
-
-1433347818 d:\evolgomoku\player\mypipe.hpp
-
-1433348218 source:d:\evolgomoku\player\mypipe.cpp
-	<stdio.h>
-	<windows.h>
-	<string.h>
-
