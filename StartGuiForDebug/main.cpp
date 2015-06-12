@@ -19,9 +19,9 @@ int main(int argc, char* argv[]) {
     char tmp[1024] = "";
 
 
-    int opt = 0;
+    int opt = 0;/*
     printf("Please input gene file path =>");
-    scanf("%s", tmp);
+    scanf("%s", tmp);*/
 
     printf("1) human first\n"
            "2) agent first\n");
@@ -123,7 +123,12 @@ bool callPlayer(HANDLE &fromPlayer, HANDLE &toPlayer, const char* playerName, co
         system("pause");
         return false;
     }
-    sprintf(tmp, "start %s.exe %s %s", playerName, fullName, genePath);
+    if(playerName[0] == 'P') {
+        sprintf(tmp, "start bin\\Release\\%s.exe %s %s", playerName, fullName, genePath);
+    } else {
+        sprintf(tmp, "start %s.exe %s %s", playerName, fullName, genePath);
+    }
+
     system(tmp); //execute program
 
     cout << "waiting" << endl;

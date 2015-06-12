@@ -66,3 +66,18 @@
 	<windows.h>
 	<string.h>
 
+1433429802 source:d:\evolgomoku\startguifordebug\board.cpp
+	"board.h"
+
+1433429802 d:\evolgomoku\startguifordebug\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433429802 source:d:\evolgomoku\startguifordebug\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
