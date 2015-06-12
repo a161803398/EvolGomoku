@@ -132,7 +132,7 @@
 	<string>
 	<stdlib.h>
 
-1434098008 source:c:\evolgomoku\player\main.cpp
+1434091905 source:c:\evolgomoku\player\main.cpp
 	<iostream>
 	<fstream>
 	<limits.h>
@@ -145,7 +145,6 @@
 	<time.h>
 	<windows.h>
 	<string>
-	<thread>
 	"myPipe.hpp"
 	"GpTree.h"
 

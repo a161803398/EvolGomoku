@@ -22,13 +22,11 @@ void delTree(GeneTree *&p) {
 }
 
 void exportTree(GeneTree *p, std::ostream &out) {
-    if (!p) {
-        out << "# ";
-    } else {
-        out << (p->opt) << (p->data) << " ";
-        exportTree(p->left, out);
-        exportTree(p->right, out);
-    }
+    if (!p) return;
+    out << (p->opt) << (p->data) << " ";
+
+    exportTree(p->left, out);
+    exportTree(p->right, out);
 }
 
 void importTree(GeneTree *&p, std::ifstream &fin) {
@@ -36,10 +34,11 @@ void importTree(GeneTree *&p, std::ifstream &fin) {
     int data;
     if(fin.eof()) return; //if EOF
     fin >> opt;
+    fin >> data;
 
-    if (opt != '#') { //if there is a node(tree)
-        fin >> data;
-        p = new GeneTree(opt, data);
+    p = new GeneTree(opt, data);
+
+    if(opt != 'n' && (opt < SL || opt > OBL) ){ //if not leaf node
         importTree(p->left, fin);
         importTree(p->right, fin);
     }

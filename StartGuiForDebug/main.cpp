@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
 
     HANDLE fromPlayer1, toPlayer1;
     HANDLE fromPlayer2, toPlayer2;
-    char tmp[1024] = "";
+    char tmp[1024] = "gene.txt";
 
 
     int opt = 0;/*

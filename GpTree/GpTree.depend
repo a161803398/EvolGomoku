@@ -9,18 +9,18 @@
 1433419573 source:c:\users\yusing\desktop\gptree\main.cpp
 	"GpTree.h"
 
-1434022886 source:c:\evolgomoku\gptree\main.cpp
+1434091501 source:c:\evolgomoku\gptree\main.cpp
 	"GpTree.h"
 	<stdlib.h>
 	<time.h>
 
-1434022551 c:\evolgomoku\gptree\gptree.h
+1434091446 c:\evolgomoku\gptree\gptree.h
 	<iostream>
 	<fstream>
 	<string>
 	<stdlib.h>
 
-1434022740 source:c:\evolgomoku\gptree\gptree.cpp
+1434091446 source:c:\evolgomoku\gptree\gptree.cpp
 	"GpTree.h"
 
 1434075511 source:d:\evolgomoku\gptree\main.cpp

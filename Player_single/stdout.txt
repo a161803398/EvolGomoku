@@ -8,11 +8,6 @@ Opponent put on [06,06].
 1) White on [9,G]
 2) Black on [7,G]
 put on [08,06].
-already get7 5
-Opponent put on [07,05].
-3) White on [8,F]
-4) Black on [9,I]
-put on [06,08].
-already get9 5
-Opponent put on [09,05].
-5) White on [6,F]
+already get5 5
+Opponent put on [05,05].
+3) White on [10,F]
