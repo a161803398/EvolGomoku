@@ -2,12 +2,6 @@
 using std::cout;
 using std::string;
 
-int turn = 0;
-int state[2][2][5] ={{{0}}};
-
-int (*selfState)[5] = state[!turn];
-int (*oppState)[5] = state[turn];
-
 void cpTree(GeneTree *&tar, GeneTree *src) {
     if(!src) {//if not node
         tar = 0;
@@ -183,50 +177,4 @@ void printTree(GeneTree *p) {
             cout << ")";
         }
     }
-}
-
-int evalTree(GeneTree *p) {
-    if(!p) return 0;
-
-    int opd1 = evalTree(p->left);
-    int opd2 = evalTree(p->right);
-
-    switch(p->opt) {
-    case '+':
-        return opd1 + opd2;
-    case '-':
-        return opd1 - opd2;
-    case '*':
-        return opd1 * opd2;
-    case '/':
-        if(opd2 == 0) return opd1;
-        return opd1 / opd2;
-    case '%':
-        if(opd2 == 0) return opd1;
-        return opd1 % opd2;
-    case AZ:
-        return opd1 > 0 ? opd2 : 0;
-    case AEZ:
-        return opd1 >= 0 ? opd2 : 0;
-    case EZ:
-        return opd1 == 0 ? opd2 : 0;
-    case NZ:
-        return opd1 != 0 ? opd2 : 0;
-    case EL:
-        return opd1 != 0 ? opd1 : opd2;
-    case 'n':
-        return p->data;
-    case SL:
-        return selfState[0][p->data];
-    case SBL:
-        return selfState[1][p->data];
-    case OL:
-        return oppState[0][p->data];
-    case OBL:
-        return oppState[1][p->data];
-    default: //that should not happen
-        cout << "Error, unknown opt !!!" << std::endl;
-    }
-
-
 }

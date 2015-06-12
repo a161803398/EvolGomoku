@@ -31,7 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="board.h" />
+		<Unit filename="GpTree.cpp" />
+		<Unit filename="GpTree.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="myPipe.cpp" />
 		<Unit filename="myPipe.hpp" />

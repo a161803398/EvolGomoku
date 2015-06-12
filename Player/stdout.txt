@@ -3,62 +3,6 @@ is connect
 Start Game
 0) Black on [8,H]
 put on [07,07].
-already get7 6
-Opponent put on [07,06].
-1) White on [8,G]
-2) Black on [7,H]
-put on [08,07].
-already get8 6
-Opponent put on [08,06].
-3) White on [7,G]
-4) Black on [9,H]
-put on [06,07].
-already get9 7
-Opponent put on [09,07].
-5) White on [6,H]
-6) Black on [8,I]
-put on [07,08].
-already get9 6
-Opponent put on [09,06].
-7) White on [6,G]
-8) Black on [9,G]
-put on [06,06].
-already get9 5
-Opponent put on [09,05].
-9) White on [6,F]
-10) Black on [6,I]
-put on [09,08].
-already get10 6
-Opponent put on [10,06].
-11) White on [5,G]
-12) Black on [4,G]
-put on [11,06].
-already get8 4
-Opponent put on [08,04].
-13) White on [7,E]
-14) Black on [4,H]
-put on [11,07].
-already get7 5
-Opponent put on [07,05].
-15) White on [8,F]
-16) Black on [5,I]
-put on [10,08].
-already get9 4
-Opponent put on [09,04].
-17) White on [6,E]
-18) Black on [6,D]
-put on [09,03].
-already get6 4
-Opponent put on [06,04].
-19) White on [9,E]
-20) Black on [10,D]
-put on [05,03].
-already get7 4
-Opponent put on [07,04].
-21) White on [8,E]
-22) Black on [10,E]
-put on [05,04].
-already get10 4
-Opponent put on [10,04].
-23) White on [5,E]
-White win!!
+already get6 6
+Opponent put on [06,06].
+1) White on [9,G]

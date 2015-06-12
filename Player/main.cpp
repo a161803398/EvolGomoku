@@ -11,6 +11,7 @@
 #include <windows.h>
 #include <string>
 #include "myPipe.hpp"
+#include "GpTree.h"
 
 using namespace std;
 
@@ -25,6 +26,53 @@ int board[board_size*board_size]; // 0 for black 1 for white 2 for empty
 int temp_board[board_size*board_size];
 int dx[8] = {0, 0, 1, -1, 1, -1, 1, -1},dy[8] = {1, -1, 1, -1, 0, 0, -1, 1};
 int state[2][2][5]; //[black/white][unblock/block][count]
+int (*selfState)[5];
+int (*oppState)[5];
+GeneTree *evalFunTree;
+
+int evalTree(GeneTree *p) {
+    if(!p) return 0;
+
+    int opd1 = evalTree(p->left);
+    int opd2 = evalTree(p->right);
+
+    switch(p->opt) {
+    case '+':
+        return opd1 + opd2;
+    case '-':
+        return opd1 - opd2;
+    case '*':
+        return opd1 * opd2;
+    case '/':
+        if(opd2 == 0) return opd1;
+        return opd1 / opd2;
+    case '%':
+        if(opd2 == 0) return opd1;
+        return opd1 % opd2;
+    case AZ:
+        return opd1 > 0 ? opd2 : 0;
+    case AEZ:
+        return opd1 >= 0 ? opd2 : 0;
+    case EZ:
+        return opd1 == 0 ? opd2 : 0;
+    case NZ:
+        return opd1 != 0 ? opd2 : 0;
+    case EL:
+        return opd1 != 0 ? opd1 : opd2;
+    case 'n':
+        return p->data;
+    case SL:
+        return selfState[0][p->data];
+    case SBL:
+        return selfState[1][p->data];
+    case OL:
+        return oppState[0][p->data];
+    case OBL:
+        return oppState[1][p->data];
+    default: //that should not happen
+        cout << "Error, unknown opt !!!" << std::endl;
+    }
+}
 
 bool check_range(int x,int y) {
     return (x >= 0 && x < board_size && y >= 0 && y < board_size);
@@ -112,64 +160,11 @@ vector <int> search_point() {
     }
     return point;
 }
-/*
-int get_score_single(int type) {
-    int (*selfState)[5] = state[type];
-
-    int totalScore = 0;
-    if(selfState[0][4] > 0) totalScore += 900; //¬¡¥|
-    if(selfState[1][4] >= 2) totalScore += 900; //Âù¥|
-    if(selfState[0][3] >= 2) totalScore += 800; //Âù¬¡¤T
-    if(selfState[0][3] > 0 && selfState[1][4] > 0) totalScore += 800;//¬¡¤T ¥|
-
-    totalScore +=  selfState[0][3] * 100 + //¬¡¤T±o 200¤À
-                   selfState[1][4] * 10 + //¥|±o20¤À
-                   selfState[1][3] * 5 + //¤T±o10¤À
-                   selfState[0][2] * 2 +//¬¡¤G±o4¤À
-                   selfState[0][1] / 2;//¬¡¤@±o1¤À
-
-    if(turn == type) {
-        if(selfState[1][4] > 0 || selfState[0][4] > 0) totalScore -= 9000;
-        if(selfState[0][3] > 0)totalScore -= 700;
-    }
-    return totalScore;
-}
 
 int get_score() {
-    return get_score_single(0) - get_score_single(1);
-}
-*/
-int get_score() {
-    int (*selfState)[5] = state[!turn];
-    int (*oppState)[5] = state[turn];
-
-    int totalScore = 0;
-
-    if(selfState[0][4] > 0) totalScore += 900; //¬¡¥|
-    if(selfState[1][4] >= 2) totalScore += 900; //Âù¥|
-    if(selfState[0][3] >= 2) totalScore += 800; //Âù¬¡¤T
-    if(selfState[0][3] > 0 && selfState[1][4] > 0) totalScore += 800;//¬¡¤T ¥|
-
-    totalScore +=  selfState[0][3] * 100 + //¬¡¤T±o 200¤À
-                   selfState[1][4] * 10 + //¥|±o20¤À
-                   selfState[1][3] * 5 + //¤T±o10¤À
-                   selfState[0][2] * 2 +//¬¡¤G±o4¤À
-                   selfState[0][1] / 2;//¬¡¤@±o1¤À
-
-    if(oppState[0][4] > 0) totalScore -= 900; //¬¡¥|
-    if(oppState[1][4] >= 2) totalScore -= 900; //Âù¥|
-    if(oppState[0][3] >= 2) totalScore -= 800; //Âù¬¡¤T
-    if(oppState[0][3] > 0 && oppState[1][4] > 0) totalScore -= 800;//¬¡¤T ¥|
-
-    totalScore -=  oppState[0][3] * 100 + //¬¡¤T±o 200¤À
-                   oppState[1][4] * 10 + //¥|±o20¤À
-                   oppState[1][3] * 5 + //¤T±o10¤À
-                   oppState[0][2] * 2 +//¬¡¤G±o4¤À
-                   oppState[0][1] / 2;//¬¡¤@±o1¤À
-
-    if(oppState[1][4] > 0 || oppState[0][4] > 0) totalScore -= 9000;
-    if(oppState[0][3] > 0)oppState -= 700;
-
+    selfState = state[!turn];
+    oppState = state[turn];
+    int totalScore = evalTree(evalFunTree);
     return turn ? totalScore : -totalScore;
 }
 
@@ -271,6 +266,12 @@ int main(int argc, char* argv[]) {
         system("StartGui.exe");
         return 1;
     }
+
+
+    ifstream fin("gene.txt");
+    importTree(evalFunTree, fin);
+    fin.close();
+
 
     writePipeName.append(argv[1]);
     readPipeName.append(argv[1]);

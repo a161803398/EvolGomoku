@@ -58,7 +58,6 @@ void randTerm(GeneTree *&p, int maxDeep, bool forceFull = false);
 void randBranch(GeneTree *&p, int maxDeep, bool forceFull = false);
 void crossOver(GeneTree *&parent1, GeneTree *&parent2);
 int getNodeCount(GeneTree *p);
-int evalTree(GeneTree *p);
 
 GeneTree*& getRandNode(GeneTree *&p, int nodeCount);
 GeneTree*& getRandNode(GeneTree *&p);

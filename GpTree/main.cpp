@@ -5,22 +5,28 @@
 using namespace std;
 int main() {
     srand(time(0));
-
+/*
     //for(int i =0; i<10; i++) {
     GeneTree *parent1, *parent2;
-    randBranch(parent1, 2);
-    randBranch(parent2, 2);
+    randBranch(parent1, 5);
+    randBranch(parent2, 5);
 
     printTree(parent1);
-    cout <<endl;
+    cout << endl << "score = " << evalTree(parent1)<< endl;
+*/
+
 /*
     printTree(parent2);
     cout <<endl;
 */
+
+/*
     mutateTree(parent1);
 
     printTree(parent1);
-    cout <<endl;
+        cout << endl << "score = " << evalTree(parent1)<< endl;
+*/
+
 /*
     GeneTree *child1, *child2;
     cpTree(child1, parent1);
@@ -44,7 +50,8 @@ int main() {
     }
 
     GeneTree *exTree;
-    randBranch(exTree, 1);
+    randBranch(exTree, 5);
+
 
     /*  exTree = new GeneTree('+');
         exTree->left = new GeneTree('*');

@@ -23,17 +23,17 @@
 1434022740 source:c:\evolgomoku\gptree\gptree.cpp
 	"GpTree.h"
 
-1434037025 source:d:\evolgomoku\gptree\main.cpp
+1434075511 source:d:\evolgomoku\gptree\main.cpp
 	"GpTree.h"
 	<stdlib.h>
 	<time.h>
 
-1434036812 d:\evolgomoku\gptree\gptree.h
+1434075797 d:\evolgomoku\gptree\gptree.h
 	<iostream>
 	<fstream>
 	<string>
 	<stdlib.h>
 
-1434036812 source:d:\evolgomoku\gptree\gptree.cpp
+1434075797 source:d:\evolgomoku\gptree\gptree.cpp
 	"GpTree.h"
 
