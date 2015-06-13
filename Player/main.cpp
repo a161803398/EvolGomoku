@@ -21,6 +21,9 @@ HANDLE hWritePipe, hReadPipe;
 
 char tmpStr[1024];
 
+const int SCORE_MAX = INT_MAX / 2;
+const int SCORE_MIN = INT_MIN / 2;
+
 const double TimeLimit = 10.0;
 const int board_size = 15;
 int turn,row,column;
@@ -33,7 +36,10 @@ int (*oppState)[5];
 GeneTree *evalFunTree;
 
 int nextPoint;
+int depthLimit = 1;
 bool forceStop = false;
+bool isThinking = false;
+
 vector <int> use_point;
 int empty_place = board_size * board_size;
 
@@ -262,23 +268,23 @@ int alphabeta(int depth, int alpha, int beta, bool maximizingPlayer) {
     int check = check_win();
 
     if(check != 2) {
-        return (check == 0 ? (INT_MAX - 100 + depth) : (INT_MIN + 100 - depth));
+        return (check == 0 ? (SCORE_MAX - depth) : (SCORE_MIN + depth));
     }
 
     if(empty_place <= 0) return 0; //even
 
-    if (depth == 0) {
+    if (depth >= depthLimit) {
         create_state();
         return get_score();// 從盤面狀態回傳分數
     }
 
     if (maximizingPlayer) {
-        int v = INT_MIN;
+        int v = SCORE_MIN;
         vector <int> use_point = search_point();
         for(int i = 0; i < use_point.size(); i++) {
             putOn(use_point[i]);
 
-            v = max(v, alphabeta(depth - 1, alpha, beta, false));
+            v = max(v, alphabeta(depth + 1, alpha, beta, false));
             alpha = max(alpha, v);
 
             undoPut(use_point[i]);
@@ -288,12 +294,12 @@ int alphabeta(int depth, int alpha, int beta, bool maximizingPlayer) {
         }
         return v;
     } else {
-        int v = INT_MAX;
+        int v = SCORE_MAX;
         vector <int> use_point = search_point();
         for(int i = 0; i < use_point.size(); i++) {
             putOn(use_point[i]);
 
-            v = min(v, alphabeta(depth - 1, alpha, beta, true));
+            v = min(v, alphabeta(depth + 1, alpha, beta, true));
             beta = min(beta, v);
 
             undoPut(use_point[i]);
@@ -322,90 +328,83 @@ void getPut(int &row, int &col) {
 
 void thinking() {
     bool isBlack = !turn;
-    int deep = 1;
+    depthLimit = 1;
 
     while(!forceStop) {
         int best_score, score;
         vector <pair<int, int> > use_point_score;
         use_point_score.reserve(use_point.size());
 
-        if(isBlack) {
-            best_score = INT_MIN;
+        vector <int > extraSearchList;
+        use_point_score.reserve(8);
 
-            for(int i = 0; i < use_point.size(); ++i) {
-                putOn(use_point[i]);
 
-                score = alphabeta(deep, INT_MIN, INT_MAX, false);
+        best_score = SCORE_MIN;
 
-                undoPut(use_point[i]);
+        int i = 0, j = 0;
+        bool normalSearch = true;
+        while(normalSearch || j < extraSearchList.size()) {
+            int curSearch;
+            if(i < use_point.size()) {
+                curSearch = use_point[i];
+                i++;
+            } else if(extraSearchList.empty()) { //create extraSearchList
+                for(int k = 0; k < 8; ++k) {
 
-                if(forceStop) return; //force stop
+                    int x = nextPoint % board_size + dx[k];
+                    int y = nextPoint / board_size + dy[k];
 
+                    if(check_range(x,y) && board[y * board_size + x] == 2 && find(use_point.begin(), use_point.end(), y * board_size + x) == use_point.end()) { //empty place
+                        extraSearchList.push_back(y * board_size + x);
+                    }
+                }
+                normalSearch = false;
 #ifdef showInfo
-                cout << "put on [" << use_point[i] / board_size << "," <<  use_point[i] % board_size << "] : " << score << endl;
+                cout << "extra size : " << extraSearchList.size() << endl;
 #endif // showInfo
 
-
-                if(score > INT_MIN + 100) { //if not lose
-                    use_point_score.push_back(std::make_pair(score, use_point[i]));
-                }
-
-                if(score > best_score) {
-                    best_score = score;
-                    nextPoint = use_point[i];
-                }
-
+                continue; //avoid redundant search
+            } else {
+                curSearch = extraSearchList[j];
+                j++;
             }
 
-            //sort point base on score
-            std::sort(use_point_score.begin(), use_point_score.end(), std::greater< pair<int, int> >());
-            use_point.clear();
+            putOn(curSearch);
 
-            for(int i = 0; i < use_point_score.size(); i++) use_point.push_back(use_point_score[i].second);
-            if(best_score > (INT_MAX - 100) || use_point_score.size() <= 1) { //必贏 || 只有一步能下
-                break;
-            }
-        } else {
-            best_score = INT_MAX;
-            for(int i = 0; i < use_point.size(); ++i) {
-                putOn(use_point[i]);
+            score = isBlack ? alphabeta(0, SCORE_MIN, SCORE_MAX, false) : -alphabeta(0, SCORE_MIN, SCORE_MAX, true);
 
-                score = alphabeta(deep, INT_MIN, INT_MAX, true);
+            undoPut(curSearch);
 
-                undoPut(use_point[i]);
-
-                if(forceStop) return; //force stop
+            if(forceStop) return; //force stop
 
 #ifdef showInfo
-                cout << "put on [" << use_point[i]/board_size << "," <<  use_point[i] % board_size << "] : " << score << endl;
+            cout << "put on [" << curSearch / board_size << "," <<  curSearch % board_size << "] : " << score << endl;
 #endif // showInfo
-
-
-                if(score < INT_MAX - 100) { //if not lose
-                    use_point_score.push_back(std::make_pair(score, use_point[i]));
-                }
-
-                if(score < best_score) {
-                    best_score = score;
-                    nextPoint = use_point[i];
-                }
-
+            if(score > SCORE_MIN + 100) { //if not lose
+                use_point_score.push_back(std::make_pair(score, curSearch));
             }
 
-            //sort point base on score
-            std::sort(use_point_score.begin(), use_point_score.end());
-            use_point.clear();
-            for(int i = 0; i < use_point_score.size(); i++) use_point.push_back(use_point_score[i].second);
-
-
-            if(best_score < (INT_MIN + 100) || use_point_score.size() <= 1) { //必贏 || 只有一步能下
-                break;
+            if(score > best_score) {
+                best_score = score;
+                nextPoint = curSearch;
             }
+
         }
-        deep++; //add depth and start a new run
 
-        cout << "now Search depth " << deep << endl;
+        //sort point base on score
+        std::sort(use_point_score.begin(), use_point_score.end(), std::greater< pair<int, int> >());
+        use_point.clear();
+
+        for(int i = 0; i < use_point_score.size(); i++) use_point.push_back(use_point_score[i].second);
+        if(best_score > (SCORE_MAX - 100) || use_point_score.size() <= 1) { //必贏 || 只有一步能下
+            break;
+        }
+
+        depthLimit ++; //add depth and start a new run
+
+        cout << "now Search depth " << depthLimit << endl;
     }
+    isThinking = false;
 }
 
 
@@ -497,19 +496,25 @@ int main(int argc, char* argv[]) {
         time(&start_tm);
         time(&finish_tm);
 
+        isThinking = true; //must put here
         thread thinkingThread(thinking);
 
-        while(difftime(finish_tm,start_tm) < TimeLimit) { //time_check
+        while(isThinking && difftime(finish_tm,start_tm) < TimeLimit) { //time_check
             time(&finish_tm);
         }
-
         forceStop = true;
-        cout << "timeout try to end thinking thread!!" << endl;
-        thinkingThread.join();
 
+#ifdef showInfo
+        if(isThinking) {
+            cout << "timeout try to end thinking thread!!" << endl;
+        }
+
+#endif // showInfo
+
+        thinkingThread.join(); //wait thinking thread end
+        isThinking = false;
         forceStop = false;
 
-        show();
         //robot put
         putOn(nextPoint);
         sendPut(nextPoint/board_size, nextPoint%board_size);

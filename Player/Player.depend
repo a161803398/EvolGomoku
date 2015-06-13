@@ -91,7 +91,7 @@
 	<windows.h>
 	<string.h>
 
-1434076433 source:d:\evolgomoku\player\main.cpp
+1434216450 source:d:\evolgomoku\player\main.cpp
 	<iostream>
 	<fstream>
 	<limits.h>
@@ -104,6 +104,7 @@
 	<time.h>
 	<windows.h>
 	<string>
+	<thread>
 	"myPipe.hpp"
 	"GpTree.h"
 
@@ -114,7 +115,7 @@
 	<windows.h>
 	<string.h>
 
-1434076512 source:d:\evolgomoku\player\gptree.cpp
+1434148377 source:d:\evolgomoku\player\gptree.cpp
 	"GpTree.h"
 
 1434075980 d:\evolgomoku\player\gptree.h
