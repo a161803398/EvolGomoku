@@ -16,8 +16,8 @@ put on [09,06].
 already get10 6
 Opponent put on [10,06].
 5) White on [5,G]
-6) Black on [8,F]
-put on [07,05].
+6) Black on [7,I]
+put on [08,08].
 already get11 7
 Opponent put on [11,07].
 7) White on [4,H]
@@ -28,27 +28,42 @@ Opponent put on [13,09].
 9) White on [2,J]
 10) Black on [3,I]
 put on [12,08].
-already get10 7
-Opponent put on [10,07].
-11) White on [5,H]
-12) Black on [3,H]
-put on [12,07].
-already get10 5
-Opponent put on [10,05].
-13) White on [5,F]
-14) Black on [5,E]
+already get8 7
+Opponent put on [08,07].
+11) White on [7,H]
+12) Black on [5,H]
+put on [10,07].
+already get6 6
+Opponent put on [06,06].
+13) White on [9,G]
+14) Black on [8,E]
+put on [07,04].
+already get8 5
+Opponent put on [08,05].
+15) White on [7,F]
+16) Black on [6,E]
+put on [09,04].
+already get6 4
+Opponent put on [06,04].
+17) White on [9,E]
+18) Black on [5,E]
 put on [10,04].
+already get11 4
+Opponent put on [11,04].
+19) White on [4,E]
+20) Black on [8,G]
+put on [07,06].
+already get7 5
+Opponent put on [07,05].
+21) White on [8,F]
+22) Black on [9,F]
+put on [06,05].
 already get11 5
 Opponent put on [11,05].
-15) White on [4,F]
-16) Black on [3,F]
-put on [12,05].
-already get12 4
-Opponent put on [12,04].
-17) White on [3,E]
-18) Black on [7,I]
-put on [08,08].
-already get13 3
-Opponent put on [13,03].
-19) White on [2,D]
+23) White on [4,F]
+24) Black on [4,G]
+put on [11,06].
+already get10 5
+Opponent put on [10,05].
+25) White on [5,F]
 White win!!

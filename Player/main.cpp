@@ -329,6 +329,7 @@ void getPut(int &row, int &col) {
 void thinking() {
     bool isBlack = !turn;
     depthLimit = 1;
+    vector <int> alreadySearch = use_point;
 
     while(!forceStop) {
         int best_score, score;
@@ -337,7 +338,6 @@ void thinking() {
 
         vector <int > extraSearchList;
         use_point_score.reserve(8);
-
 
         best_score = SCORE_MIN;
 
@@ -353,9 +353,14 @@ void thinking() {
 
                     int x = nextPoint % board_size + dx[k];
                     int y = nextPoint / board_size + dy[k];
+                    int idx = y * board_size + x;
 
-                    if(check_range(x,y) && board[y * board_size + x] == 2 && find(use_point.begin(), use_point.end(), y * board_size + x) == use_point.end()) { //empty place
-                        extraSearchList.push_back(y * board_size + x);
+                    if(check_range(x,y) && board[idx] == 2 &&
+                            //find(use_point.begin(), use_point.end(), idx) == use_point.end() &&
+                            find(alreadySearch.begin(), alreadySearch.end(), idx) == alreadySearch.end()
+                      ) { //empty place
+                        extraSearchList.push_back(idx);
+                        alreadySearch.push_back(idx); //add to already search
                     }
                 }
                 normalSearch = false;
@@ -380,6 +385,7 @@ void thinking() {
 #ifdef showInfo
             cout << "put on [" << curSearch / board_size << "," <<  curSearch % board_size << "] : " << score << endl;
 #endif // showInfo
+
             if(score > SCORE_MIN + 100) { //if not lose
                 use_point_score.push_back(std::make_pair(score, curSearch));
             }
