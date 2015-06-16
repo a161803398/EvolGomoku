@@ -63,7 +63,6 @@ static SDL_Cursor *init_system_cursor(const char *image[]) {
     int i, row, col;
     Uint8 data[4*32];
     Uint8 mask[4*32];
-    int hot_x, hot_y;
 
     i = -1;
     for (row=0; row<32; ++row) {
@@ -88,8 +87,8 @@ static SDL_Cursor *init_system_cursor(const char *image[]) {
             }
         }
     }
-    sscanf(image[4+row], "%d,%d", &hot_x, &hot_y);
-    return SDL_CreateCursor(data, mask, 32, 32, hot_x, hot_y);
+
+    return SDL_CreateCursor(data, mask, 32, 32, 16, 16);
 }
 
 bool createWindow(SDL_Surface **screen) {
