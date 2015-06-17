@@ -115,8 +115,8 @@ void undoPut(int row, int col) {
 pair <int, bool> c_line(int point, int turn, int direction, int length) {
     pair <int,bool> result;
     int x, y;
-    y = point / board_size + dx[direction];
-    x = point % board_size + dy[direction];
+    y = point / board_size + dy[direction];
+    x = point % board_size + dx[direction];
     result.second = false;
     result.first = length;
     if(check_range(x, y)) {
@@ -160,6 +160,14 @@ void create_state() {
             pair <int,bool> left,right;
             left = c_line(i, board[i], k, 0);
             right = c_line(i, board[i], k+1, 0);
+            int x=i%board_size;
+            int y=i/board_size;
+            if(!check_range(x+(left.first+1)*dx[k],y+(left.first+1)*dy[k])) {
+                left.second=true;
+            }
+            if(!check_range(x+(right.first+1)*dx[k+1],y+(right.first+1)*dy[k+1])) {
+                right.second=true;
+            }
             if(left.second == true && right.second == true) {
                 continue;
             }
@@ -330,19 +338,22 @@ void thinking() {
     bool isBlack = !turn;
     depthLimit = 1;
     vector <int> alreadySearch = use_point;
+    int best_score  = SCORE_MIN;
 
     while(!forceStop) {
-        int best_score, score;
+        int score;
+        int curBestScore = SCORE_MIN;
+        int curNext = use_point[0];
         vector <pair<int, int> > use_point_score;
         use_point_score.reserve(use_point.size());
 
         vector <int > extraSearchList;
         use_point_score.reserve(8);
 
-        best_score = SCORE_MIN;
 
         int i = 0, j = 0;
         bool normalSearch = true;
+
         while(normalSearch || j < extraSearchList.size()) {
             int curSearch;
             if(i < use_point.size()) {
@@ -351,8 +362,8 @@ void thinking() {
             } else if(extraSearchList.empty()) { //create extraSearchList
                 for(int k = 0; k < 8; ++k) {
 
-                    int x = nextPoint % board_size + dx[k];
-                    int y = nextPoint / board_size + dy[k];
+                    int x = curNext % board_size + dx[k];
+                    int y = curNext / board_size + dy[k];
                     int idx = y * board_size + x;
 
                     if(check_range(x,y) && board[idx] == 2 &&
@@ -376,7 +387,7 @@ void thinking() {
 
             putOn(curSearch);
 
-            score = isBlack ? alphabeta(0, SCORE_MIN, SCORE_MAX, false) : -alphabeta(0, SCORE_MIN, SCORE_MAX, true);
+            score = isBlack ? alphabeta(0, curBestScore, SCORE_MAX, false) : -alphabeta(0, SCORE_MIN, -curBestScore, true);
 
             undoPut(curSearch);
 
@@ -390,12 +401,21 @@ void thinking() {
                 use_point_score.push_back(std::make_pair(score, curSearch));
             }
 
-            if(score > best_score) {
-                best_score = score;
-                nextPoint = curSearch;
+            if(score > curBestScore) {
+                curBestScore = score;
+                curNext = curSearch;
+                if(curBestScore > best_score) { //if it better than all score in history, update it(despite search is not complete)
+                    best_score = curBestScore;
+                    nextPoint = curNext;
+                }
             }
 
         }
+
+        //however, if all score in far depth is not better than any score in history, it should still update.(because old search is excessive optimism)
+        best_score = curBestScore;
+        nextPoint = curNext;
+
 
         //sort point base on score
         std::sort(use_point_score.begin(), use_point_score.end(), std::greater< pair<int, int> >());
