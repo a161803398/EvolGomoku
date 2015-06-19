@@ -91,7 +91,7 @@
 	<windows.h>
 	<string.h>
 
-1434692411 source:d:\evolgomoku\player\main.cpp
+1434684334 source:d:\evolgomoku\player\main.cpp
 	<iostream>
 	<fstream>
 	<limits.h>
@@ -156,4 +156,59 @@
 	<stdio.h>
 	<windows.h>
 	<string.h>
+
+1434148377 source:d:\evolgomoku\player_ref\gptree.cpp
+	"GpTree.h"
+
+1434075980 d:\evolgomoku\player_ref\gptree.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1433348218 source:d:\evolgomoku\player_ref\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1434685579 source:d:\evolgomoku\player_ref\main.cpp
+	<iostream>
+	<fstream>
+	<limits.h>
+	<vector>
+	<algorithm>
+	<stdlib.h>
+	<utility>
+	<time.h>
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<string>
+	<thread>
+	"myPipe.hpp"
+
+1433347818 d:\evolgomoku\player_ref\mypipe.hpp
+
+1433348218 source:d:\evolgomoku\ref\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1434688072 source:d:\evolgomoku\ref\main.cpp
+	<iostream>
+	<fstream>
+	<limits.h>
+	<vector>
+	<algorithm>
+	<stdlib.h>
+	<utility>
+	<time.h>
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<string>
+	<thread>
+	"myPipe.hpp"
+
+1433347818 d:\evolgomoku\ref\mypipe.hpp
 

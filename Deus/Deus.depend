@@ -68,3 +68,44 @@
 	<windows.h>
 	<string.h>
 
+1433348218 source:d:\evolgomoku\deus\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1434702871 source:d:\evolgomoku\deus\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<vector>
+	<stdlib.h>
+	<time.h>
+	"myPipe.hpp"
+	"Evol.h"
+
+1433347716 d:\evolgomoku\deus\mypipe.hpp
+
+1433221260 d:\evolgomoku\deus\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1434692601 source:d:\evolgomoku\deus\gptree.cpp
+	"GpTree.h"
+
+1434148377 d:\evolgomoku\deus\gptree.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1434698400 source:d:\evolgomoku\deus\evol.cpp
+	"Evol.h"
+
+1434702867 d:\evolgomoku\deus\evol.h
+	"GpTree.h"
+	<algorithm>
+

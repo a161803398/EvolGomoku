@@ -12,7 +12,6 @@
 #include <string>
 #include <thread>
 #include "myPipe.hpp"
-#include "GpTree.h"
 
 //#define showInfo
 using namespace std;
@@ -33,7 +32,6 @@ int dx[8] = {0, 0, 1, -1, 1, -1, 1, -1},dy[8] = {1, -1, 1, -1, 0, 0, -1, 1};
 int state[2][2][5]; //[black/white][unblock/block][count]
 int (*selfState)[5];
 int (*oppState)[5];
-GeneTree *evalFunTree;
 
 int nextPoint;
 int depthLimit = 1;
@@ -43,50 +41,6 @@ bool isThinking = false;
 vector <int> use_point;
 int empty_place = board_size * board_size;
 
-int evalTree(GeneTree *p) {
-    if(!p) return 0;
-
-    int opd1 = evalTree(p->left);
-    int opd2 = evalTree(p->right);
-
-    switch(p->opt) {
-    case '+':
-        return opd1 + opd2;
-    case '-':
-        return opd1 - opd2;
-    case '*':
-        return opd1 * opd2;
-    case '/':
-        if(opd2 == 0) return opd1;
-        return opd1 / opd2;
-    case '%':
-        if(opd2 == 0) return opd1;
-        return opd1 % opd2;
-    case AZ:
-        return opd1 > 0 ? opd2 : 0;
-    case AEZ:
-        return opd1 >= 0 ? opd2 : 0;
-    case EZ:
-        return opd1 == 0 ? opd2 : 0;
-    case NZ:
-        return opd1 != 0 ? opd2 : 0;
-    case EL:
-        return opd1 != 0 ? opd1 : opd2;
-    case 'n':
-        return p->data;
-    case SL:
-        return selfState[0][p->data];
-    case SBL:
-        return selfState[1][p->data];
-    case OL:
-        return oppState[0][p->data];
-    case OBL:
-        return oppState[1][p->data];
-    default: //that should not happen
-        cout << "Error, unknown opt :" << p->opt << std::endl;
-        return 0;
-    }
-}
 
 bool check_range(int x,int y) {
     return (x >= 0 && x < board_size && y >= 0 && y < board_size);
@@ -212,14 +166,6 @@ vector <int> search_point() {
 }
 
 int get_score() {
-    selfState = state[!turn];
-    oppState = state[turn];
-    int totalScore = evalTree(evalFunTree);
-    return turn ? totalScore : -totalScore;
-}
-
-/*
-int get_score() {
     int (*selfState)[5] = state[!turn];
     int (*oppState)[5] = state[turn];
 
@@ -251,7 +197,6 @@ int get_score() {
 
     return turn ? totalScore : -totalScore;
 }
-*/
 
 
 void show() {
@@ -448,18 +393,11 @@ int main(int argc, char* argv[]) {
     string writePipeName("\\\\.\\pipe\\From");
     string readPipeName("\\\\.\\pipe\\To");
 
-    if(argc < 3) {
+    if(argc < 2) {
         cout << "Error args!!" << endl;
-        system("StartGui.exe");
+        system("pause");
         return 1;
     }
-
-
-    cout << "Load gene from " << argv[2] << endl;
-    ifstream fin(argv[2]);
-    importTree(evalFunTree, fin);
-    fin.close();
-
 
 
     writePipeName.append(argv[1]);
@@ -479,7 +417,7 @@ int main(int argc, char* argv[]) {
         system("pause");
         return 1;
     }
-
+    cout << "This is ref program" <<endl;
     sendMsg(hWritePipe, "r"); //tell GUI the pipe is created
     cout << "send" << endl;
     ConnectNamedPipe(hReadPipe, NULL); //wait for GUI connect to pipe

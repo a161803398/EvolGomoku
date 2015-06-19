@@ -43,12 +43,12 @@ int main(int argc, char* argv[]) { //args : [startPath, pipeName, gene1, gene2]
     HANDLE fromPlayer2, toPlayer2;
     char tmp[1024];
 
-    if(!callPlayer(fromPlayer1, toPlayer1, "Player1", "a")) {
+    if(!callPlayer(fromPlayer1, toPlayer1, "Player1", argv[2])) {
         cout << "Player 1 do not respond, exit!!" << endl;
         return 1;
     }
     //cout << "callPlayer1 finish" << endl;
-    if(!callPlayer(fromPlayer2, toPlayer2, "Player2", "b")) {
+    if(!callPlayer(fromPlayer2, toPlayer2, "Player2", argv[3])) {
         cout << "Player 2 do not respond, exit!!" << endl;
         return 1;
     }
@@ -107,10 +107,10 @@ int main(int argc, char* argv[]) { //args : [startPath, pipeName, gene1, gene2]
     int player1Score = 0, player2Score = 0;
     if(winner != WALL) { //not even
         if(winner == BLACK) { //Player1 win
-            player1Score = 255 - getPutCount();
+            player1Score = 225 - getPutCount();
             player2Score = -player1Score;
         } else { //Player2 win
-            player2Score = 255 - getPutCount();
+            player2Score = 225 - getPutCount();
             player1Score = -player2Score;
         }
     }
@@ -146,7 +146,13 @@ bool callPlayer(HANDLE &fromPlayer, HANDLE &toPlayer, const char* playerName, co
         system("pause");
         return false;
     }
-    sprintf(tmp, "start Player.exe %s %s", fullName, genePath);
+    if(strcmp(genePath, "ref.exe") == 0){
+        sprintf(tmp, "start ref.exe %s", fullName);
+    }else{
+        sprintf(tmp, "start Player.exe %s %s", fullName, genePath);
+    }
+
+
     system(tmp); //execute program
 
     cout << "waiting" << endl;
