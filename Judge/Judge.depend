@@ -77,3 +77,44 @@
 	<windows.h>
 	<string.h>
 
+1433221270 source:d:\evolgomoku\judge_ref\board.cpp
+	"board.h"
+
+1433221260 d:\evolgomoku\judge_ref\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433348218 source:d:\evolgomoku\judge_ref\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433221270 source:d:\evolgomoku\judge\board.cpp
+	"board.h"
+
+1433221260 d:\evolgomoku\judge\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433348218 source:d:\evolgomoku\judge\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1434687203 source:d:\evolgomoku\judge\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+	"myPipe.hpp"
+	"board.h"
+
+1433347818 d:\evolgomoku\judge\mypipe.hpp
+
