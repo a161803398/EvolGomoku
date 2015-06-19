@@ -1,3 +1,0 @@
-send
-is connect
-Start Game

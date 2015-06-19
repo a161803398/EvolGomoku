@@ -14,7 +14,7 @@
 #include "myPipe.hpp"
 #include "GpTree.h"
 
-//#define showInfo
+#define showInfo
 using namespace std;
 
 HANDLE hWritePipe, hReadPipe;
@@ -210,15 +210,15 @@ vector <int> search_point() {
 
     return point;
 }
-
+/*
 int get_score() {
     selfState = state[!turn];
     oppState = state[turn];
     int totalScore = evalTree(evalFunTree);
     return turn ? totalScore : -totalScore;
 }
+*/
 
-/*
 int get_score() {
     int (*selfState)[5] = state[!turn];
     int (*oppState)[5] = state[turn];
@@ -251,7 +251,7 @@ int get_score() {
 
     return turn ? totalScore : -totalScore;
 }
-*/
+
 
 
 void show() {
@@ -455,11 +455,9 @@ int main(int argc, char* argv[]) {
     }
 
 
-    cout << "Load gene from " << argv[2] << endl;
     ifstream fin(argv[2]);
     importTree(evalFunTree, fin);
     fin.close();
-
 
 
     writePipeName.append(argv[1]);

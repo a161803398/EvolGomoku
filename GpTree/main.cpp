@@ -96,7 +96,7 @@ int main() {
 */
 
     //}
-/*
+
     ofstream fout("gene.txt");
     if(!fout) {
         cout << "Can not create file!!\n";
@@ -105,7 +105,7 @@ int main() {
 
     GeneTree *exTree;
     randBranch(exTree, 5);
-*/
+
 
     /*  exTree = new GeneTree('+');
         exTree->left = new GeneTree('*');
@@ -113,15 +113,13 @@ int main() {
         exTree->left -> right = new GeneTree(12);
         exTree->right = new GeneTree(16);
     */
-    /*
     exportTree(exTree, fout);
     fout.close();
-*/
+
     GeneTree *readTree;
 
     ifstream fin("gene.txt");
     importTree(readTree, fin);
-    cout << getNodeCount(readTree) << endl;
     printTree(readTree);
     //exportTree(readTree, cout);
 

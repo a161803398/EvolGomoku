@@ -91,7 +91,7 @@
 	<windows.h>
 	<string.h>
 
-1434692411 source:d:\evolgomoku\player\main.cpp
+1434582645 source:d:\evolgomoku\player\main.cpp
 	<iostream>
 	<fstream>
 	<limits.h>
