@@ -1,0 +1,200 @@
+# depslib dependency file v1.0
+1433333516 source:c:\dropbox\報告\啟發式演算法\final\deus\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+	"myPipe.hpp"
+	"board.h"
+
+1430464022 c:\dropbox\報告\啟發式演算法\final\deus\mypipe.hpp
+
+1433221260 c:\dropbox\報告\啟發式演算法\final\deus\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433333295 source:c:\dropbox\報告\啟發式演算法\final\deus\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433329584 source:c:\dropbox\報告\啟發式演算法\final_o\deus\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+	"myPipe.hpp"
+	"board.h"
+
+1430464022 c:\dropbox\報告\啟發式演算法\final_o\deus\mypipe.hpp
+
+1433221260 c:\dropbox\報告\啟發式演算法\final_o\deus\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433328884 source:c:\dropbox\報告\啟發式演算法\final_o\deus\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433347634 source:d:\dropbox\報告\啟發式演算法\final\deus\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+	"myPipe.hpp"
+	"board.h"
+
+1433347716 d:\dropbox\報告\啟發式演算法\final\deus\mypipe.hpp
+
+1433221260 d:\dropbox\報告\啟發式演算法\final\deus\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1433348218 source:d:\dropbox\報告\啟發式演算法\final\deus\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1433348218 source:d:\evolgomoku\deus\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1434716231 source:d:\evolgomoku\deus\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<vector>
+	<stdlib.h>
+	<time.h>
+	"myPipe.hpp"
+	"Evol.h"
+
+1433347716 d:\evolgomoku\deus\mypipe.hpp
+
+1433221260 d:\evolgomoku\deus\board.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<stdlib.h>
+
+1434703302 source:d:\evolgomoku\deus\gptree.cpp
+	"GpTree.h"
+
+1434703302 d:\evolgomoku\deus\gptree.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1434703302 source:d:\evolgomoku\deus\evol.cpp
+	"Evol.h"
+
+1434767514 d:\evolgomoku\deus\evol.h
+	"GpTree.h"
+	<algorithm>
+
+1434703302 source:d:\evolgomoku\deus4\evol.cpp
+	"Evol.h"
+
+1434768391 d:\evolgomoku\deus4\evol.h
+	"GpTree.h"
+	<algorithm>
+
+1434703302 d:\evolgomoku\deus4\gptree.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1434703302 source:d:\evolgomoku\deus4\gptree.cpp
+	"GpTree.h"
+
+1433348218 source:d:\evolgomoku\deus4\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1434768357 source:d:\evolgomoku\deus4\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<vector>
+	<stdlib.h>
+	<time.h>
+	"myPipe.hpp"
+	"Evol.h"
+
+1433347716 d:\evolgomoku\deus4\mypipe.hpp
+
+1434703302 source:d:\evolgomoku\deus8\evol.cpp
+	"Evol.h"
+
+1434768391 d:\evolgomoku\deus8\evol.h
+	"GpTree.h"
+	<algorithm>
+
+1434703302 d:\evolgomoku\deus8\gptree.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1434703302 source:d:\evolgomoku\deus8\gptree.cpp
+	"GpTree.h"
+
+1433348218 source:d:\evolgomoku\deus8\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1434703302 source:d:\evolgomoku\deusgen\evol.cpp
+	"Evol.h"
+
+1434883566 d:\evolgomoku\deusgen\evol.h
+	"GpTree.h"
+	<algorithm>
+
+1434703302 d:\evolgomoku\deusgen\gptree.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1434703302 source:d:\evolgomoku\deusgen\gptree.cpp
+	"GpTree.h"
+
+1433348218 source:d:\evolgomoku\deusgen\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
+1434883540 source:d:\evolgomoku\deusgen\main.cpp
+	<stdio.h>
+	<windows.h>
+	<string>
+	<iostream>
+	<vector>
+	<stdlib.h>
+	<time.h>
+	"myPipe.hpp"
+	"Evol.h"
+
+1433347716 d:\evolgomoku\deusgen\mypipe.hpp
+

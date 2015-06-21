@@ -1,3 +1,53 @@
 send
 is connect
 Start Game
+0) Black on [8,H]
+put on [07,07].
+already get9 7
+Opponent put on [09,07].
+1) White on [6,H]
+2) Black on [8,G]
+put on [07,06].
+already get9 9
+Opponent put on [09,09].
+3) White on [6,J]
+4) Black on [8,I]
+put on [07,08].
+already get7 9
+Opponent put on [07,09].
+5) White on [8,J]
+6) Black on [6,G]
+put on [09,06].
+already get8 9
+Opponent put on [08,09].
+7) White on [7,J]
+8) Black on [9,J]
+put on [06,09].
+already get8 7
+Opponent put on [08,07].
+9) White on [7,H]
+10) Black on [7,G]
+put on [08,06].
+already get10 6
+Opponent put on [10,06].
+11) White on [5,G]
+12) Black on [7,I]
+put on [08,08].
+already get6 8
+Opponent put on [06,08].
+13) White on [9,I]
+14) Black on [10,K]
+put on [05,10].
+already get8 10
+Opponent put on [08,10].
+15) White on [7,K]
+16) Black on [6,L]
+put on [09,11].
+already get10 8
+Opponent put on [10,08].
+17) White on [5,I]
+18) Black on [8,L]
+put on [07,11].
+already get10 9
+Opponent put on [10,09].
+19) White on [5,J]

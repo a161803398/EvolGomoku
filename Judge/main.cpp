@@ -146,8 +146,8 @@ bool callPlayer(HANDLE &fromPlayer, HANDLE &toPlayer, const char* playerName, co
         system("pause");
         return false;
     }
-    if(strcmp(genePath, "ref.exe") == 0){
-        sprintf(tmp, "start ref.exe %s", fullName);
+    if(genePath[0] != 'g'){
+        sprintf(tmp, "start %s %s", genePath, fullName);
     }else{
         sprintf(tmp, "start Player.exe %s %s", fullName, genePath);
     }

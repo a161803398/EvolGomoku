@@ -73,7 +73,7 @@
 	<windows.h>
 	<string.h>
 
-1434702871 source:d:\evolgomoku\deus\main.cpp
+1434716231 source:d:\evolgomoku\deus\main.cpp
 	<stdio.h>
 	<windows.h>
 	<string>
@@ -93,19 +93,19 @@
 	<iostream>
 	<stdlib.h>
 
-1434692601 source:d:\evolgomoku\deus\gptree.cpp
+1434703302 source:d:\evolgomoku\deus\gptree.cpp
 	"GpTree.h"
 
-1434148377 d:\evolgomoku\deus\gptree.h
+1434703302 d:\evolgomoku\deus\gptree.h
 	<iostream>
 	<fstream>
 	<string>
 	<stdlib.h>
 
-1434698400 source:d:\evolgomoku\deus\evol.cpp
+1434703302 source:d:\evolgomoku\deus\evol.cpp
 	"Evol.h"
 
-1434702867 d:\evolgomoku\deus\evol.h
+1434767514 d:\evolgomoku\deus\evol.h
 	"GpTree.h"
 	<algorithm>
 

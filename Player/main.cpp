@@ -24,7 +24,7 @@ char tmpStr[1024];
 const int SCORE_MAX = INT_MAX / 2;
 const int SCORE_MIN = INT_MIN / 2;
 
-const double TimeLimit = 10.0;
+const double TimeLimit = 3.0;
 const int board_size = 15;
 int turn,row,column;
 int board[board_size*board_size]; // 0 for black 1 for white 2 for empty
@@ -254,6 +254,8 @@ int get_score() {
 */
 
 
+
+
 void show() {
     //system("cls");
     for(int i = 0; i<board_size; ++i) {
@@ -355,6 +357,7 @@ void thinking() {
         bool normalSearch = true;
 
         while(normalSearch || j < extraSearchList.size()) {
+            alreadySearch.clear();
             int curSearch;
             if(i < use_point.size()) {
                 curSearch = use_point[i];
@@ -492,10 +495,30 @@ int main(int argc, char* argv[]) {
 
     if(tmpStr[0] == 'b') {
         cout << "I am black." << endl;
-        board[1 * board_size + 7] = 0;
+
+        switch (rand() % 4) {
+        case 0:
+            board[1 * board_size + 7] = 0;
+            sendPut(1, 7);
+            break;
+        case 1:
+            board[13 * board_size + 7] = 0;
+            sendPut(13, 7);
+            break;
+        case 2:
+            board[7 * board_size + 1] = 0;
+            sendPut(7, 1);
+            break;
+        case 3:
+            board[7 * board_size + 13] = 0;
+            sendPut(7, 13);
+            break;
+        }
+
         turn = 1; //white
         empty_place --;
-        sendPut(1, 7);
+
+
     } else {
         cout << "I am white." << endl;
     }

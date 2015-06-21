@@ -11,7 +11,7 @@
 using namespace std;
 
 bool callJudge(HANDLE &fromJudge, int judgeId, const char* genePath1, const char* genePath2);
-
+bool evalScore(TreeScore *tar, const char *folderName, bool first, const char *standard = "ref.exe");
 
 TreeScore parentTrees[Population];
 
@@ -41,7 +41,7 @@ void outputScore(char *folderName, TreeScore *tar) {
 }
 
 
-bool evalScore(TreeScore *tar, const char *folderName, bool first) {
+bool evalScore(TreeScore *tar, const char *folderName, bool first, const char *standard) {
 
     char tmp[1024];
     HANDLE fromJudges[Population];
@@ -50,12 +50,12 @@ bool evalScore(TreeScore *tar, const char *folderName, bool first) {
         for(int i = j * RunLimit; i < (j + 1) * RunLimit; i++) {
             sprintf(tmp, "genes\\%s\\i%d.txt", folderName, i);
             if(first) {
-                if(!callJudge(fromJudges[i], i, tmp, "ref.exe")) { //first
+                if(!callJudge(fromJudges[i], i, tmp, standard)) { //first
                     cout << "Judge" <<  i << " do not respond, exit!!" << endl;
                     return false;
                 }
             } else {
-                if(!callJudge(fromJudges[i], i, "ref.exe", tmp)) {
+                if(!callJudge(fromJudges[i], i, standard, tmp)) {
                     cout << "Judge" <<  i << " do not respond, exit!!" << endl;
                     return false;
                 }
@@ -132,6 +132,17 @@ int main(int argc, char* argv[]) {
             importTree(parentTrees[i].tree, treeImport);
             treeImport.close();
         }
+/*
+        //reevaluate score
+        sprintf(tmp, "g%d", generation);
+        for(int i = 0; i < Population; i++) parentTrees[i].score = 0;
+        evalScore(parentTrees, tmp, true);
+        evalScore(parentTrees, tmp, false);
+
+        outputScore(tmp, parentTrees);
+        makeReport(report);
+
+*/
         //load score
         sprintf(tmp, "genes\\g%d\\score.txt", generation);
         ifstream scoreImport(tmp);
