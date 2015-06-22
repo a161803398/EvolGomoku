@@ -87,7 +87,7 @@ bool evalScore(TreeScore *tar, const char *folderName, bool first, const char *s
 
 
 void makeReport(ofstream &report) {
-    int best = -1000;
+    int best = -100000;
     double average = 0;
 
     for(int i = 0; i < Population; i++) {

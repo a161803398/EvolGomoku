@@ -109,3 +109,24 @@
 	"GpTree.h"
 	<algorithm>
 
+1434943941 source:c:\evolgomoku\deus\evol.cpp
+	"Evol.h"
+
+1434944030 c:\evolgomoku\deus\evol.h
+	"GpTree.h"
+	<algorithm>
+
+1434943941 c:\evolgomoku\deus\gptree.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1434943941 source:c:\evolgomoku\deus\gptree.cpp
+	"GpTree.h"
+
+1433395481 source:c:\evolgomoku\deus\mypipe.cpp
+	<stdio.h>
+	<windows.h>
+	<string.h>
+
